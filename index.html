@@ -23,6 +23,20 @@
                 <textarea readonly id="password" placeholder="Your Secure Password"
                     aria-label="Generated Password"></textarea>
             </div>
+
+            <div class="card-body">
+                <h5>Select Password Length</h5>
+                <input type="range" id="rangeInput" name="rangeInput" min="8" max="128" value="8"
+                    oninput="amount.value=rangeInput.value">
+
+                <output name="amount" id="amount" for="rangeInput">8</output><br>
+
+                <input type="checkbox" name="chkSpecialChars">Special Characters<br>
+                <input type="checkbox" name="chkNumChars">Numeric Characters<br>
+                <input type="checkbox" name="chkLowChars">Lowercase Characters<br>
+                <input type="checkbox" name="chkUppChars">Uppercase Characters<br>
+            </div>
+
             <div class="card-footer">
                 <button id="generate" class="btn">Generate Password</button>
                 <button id="copy" disabled class="btn">Copy to Clipboard</button>
