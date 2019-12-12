@@ -6,6 +6,8 @@ var chkNumChars = document.querySelector("#chkNumChars");
 var chkLowChars = document.querySelector("#chkLowChars");
 var chkUppChars = document.querySelector("#chkUppChars");
 var rangeInput = document.querySelector("#rangeInput");
+var passwordText = document.querySelector("#password");
+
 // Length (Must be between 8 - 128 characters) 
 
 // Special characters 
@@ -22,13 +24,13 @@ var uppChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyToClipboard);
 
 //todo BONUS LISTENER
 
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
-    var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
 
@@ -89,5 +91,10 @@ function generatePassword() {
 }
 
 function copyToClipboard() {
-    // BONUS 
+  /* Select the text field */
+  passwordText.select();
+  passwordText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
 }
