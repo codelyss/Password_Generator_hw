@@ -56,7 +56,7 @@ function generatePassword() {
     if (spChecked || numChecked || lowChecked || uppChecked) {
         var pLength = rangeInput.value;
 
-        while (password.length < pLength) {
+        while (true) {
             if (spChecked) {
                 var rdm = Math.floor((Math.random() * specialLength));
                 password += specialChars[rdm];
